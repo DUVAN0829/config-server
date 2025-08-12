@@ -59,7 +59,9 @@ public class UserController {
             return ResponseEntity.notFound().build();
         }
 
-        return ResponseEntity.status(HttpStatus.NO_CONTENT).body(Map.of("message", "User " + userOptional.get().getName() + " Delete with successfully"));
+        service.deleteById(userOptional.get().getId());
+
+        return ResponseEntity.status(HttpStatus.OK).body(Map.of("message", "User " + userOptional.get().getName() + " Delete with successfully"));
 
     }
 
