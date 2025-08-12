@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -43,6 +44,9 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<User> save(@RequestBody User user) {
+
+        user.setFechaCreacion(new Date());
+
         return ResponseEntity.status(HttpStatus.CREATED).body(service.save(user));
     }
 

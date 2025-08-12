@@ -15,8 +15,8 @@ public class User {
 
     private String name;
 
-    @Column(name = "fecha_nacimiento")
-    private Date fechaNacimiento;
+    @Column(name = "fecha_creacion")
+    private Date fechaCreacion;
 
     //* Getters and Setters
     public Long getId() {
@@ -35,12 +35,11 @@ public class User {
         this.name = name;
     }
 
-    public Date getFechaNacimiento() {
-        return fechaNacimiento;
+    public Date getFechaCreacion() {
+        return fechaCreacion;
     }
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
+    public void setFechaCreacion(Date fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
     }
-
 }
